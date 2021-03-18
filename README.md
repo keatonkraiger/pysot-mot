@@ -58,21 +58,23 @@ Download models in [PySOT Model Zoo](MODEL_ZOO.md) and put the model.pth in the 
 python tools/demo.py \
     --config experiments/siamrpn_r50_l234_dwxcorr/config.yaml \
     --snapshot experiments/siamrpn_r50_l234_dwxcorr/model.pth
+    --save #if you want to save the demo video
     # --video demo/bag.avi # (in case you don't have webcam)
 ```
+For the demo, if you want to save the video, you just include the `--save` flag and in the file `tools/demo.py` there is a variable named `SAVE_FORMAT`. You can set this to either `gif` or `mp4` depending on how you want to save it. GIFs only save 50 frames of the demonstration.
 
 ### Download testing datasets
 Download datasets and put them into `testing_dataset` directory. Jsons of commonly used datasets can be downloaded from [Google Drive](https://drive.google.com/drive/folders/10cfXjwQQBQeu48XMf2xc_W1LucpistPI) or [BaiduYun](https://pan.baidu.com/s/1js0Qhykqqur7_lNRtle1tA#list/path=%2F). If you want to test tracker on new dataset, please refer to [pysot-toolkit](https://github.com/StrangerZhang/pysot-toolkit) to setting `testing_dataset`. 
 
 ### Test tracker
 ```bash
-cd experiments/siamrpn_r50_l234_dwxcorr
+cd experiments/siamrpn_alex_dwxcorr
 python -u ../../tools/test.py 	\
 	--snapshot model.pth 	\ # model path
 	--dataset VOT2018 	\ # dataset name
 	--config config.yaml	  # config file
 ```
-The testing results will in the current directory(results/dataset/model_name/)
+You will want to move the dataset folders you are working with into the current experiments directory.
 
 ### Eval tracker
 assume still in experiments/siamrpn_r50_l234_dwxcorr_8gpu
