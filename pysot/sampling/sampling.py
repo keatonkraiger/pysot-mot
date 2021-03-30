@@ -57,3 +57,5 @@ def velo_norm_samp(img, bbox, velo, std_dev):
 		temp_rois = noi_norm(cx,cy,width,height,velo[i],std_dev[i])
 		rois.extend(temp_rois)
 	return rois
+
+
