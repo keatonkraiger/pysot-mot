@@ -111,6 +111,5 @@ experiments
 *.value
 *.jpg
 *.json
-*.pth
 *.mp4
 *.DS_Store

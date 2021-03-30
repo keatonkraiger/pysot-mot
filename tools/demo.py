@@ -21,7 +21,7 @@ from pysot.tracker.tracker_builder import build_tracker
 
 torch.set_num_threads(1)
 
-SAVE_FORMAT = 'mp4'
+SAVE_FORMAT = 'gif'
 
 parser = argparse.ArgumentParser(description='tracking demo')
 parser.add_argument('--config', type=str, help='config file')
