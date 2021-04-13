@@ -155,13 +155,11 @@ def main():
                 frame = cv2.addWeighted(frame, 0.77, mask, 0.23, -1)
             else:
                 bbox = list(map(int, outputs["bbox"]))
-                """
                 rec_free = frame.copy()
                 cropped_image = rec_free[
                     bbox[1] : bbox[1] + bbox[3], bbox[0] : bbox[0] + bbox[2]
                 ]
                 # cv2.imshow("cropped", cropped_image)
-                """
                 cv2.rectangle(
                     frame,
                     (bbox[0], bbox[1]),
@@ -169,12 +167,8 @@ def main():
                     (0, 255, 0),
                     3,
                 )
-            cv2.imshow(video_name, frame)
-            """
-            multi_template(rec_free, cropped_image, 0.8)
-            cv2.imshow("cropped", cropped_image)
-            cv2.waitKey(0)
-            """
+            # cv2.imshow(video_name, frame)
+            #multi_template(rec_free, cropped_image, 0.8)
             if args.save:
                 if SAVE_FORMAT != "gif":
                     cv2.imwrite("demo/demo_images/{}.jpg".format(i), frame)

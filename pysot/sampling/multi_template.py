@@ -31,5 +31,4 @@ def multi_template(image, template, threshold=0.8):
         cv2.rectangle(image, (startX, startY), (endX, endY), (255, 0, 0), 3)
 
     # show the output image
-    # cv2.imshow("After NMS", image)
-    # cv2.waitKey(0)
+    cv2.imshow("After NMS", image)
