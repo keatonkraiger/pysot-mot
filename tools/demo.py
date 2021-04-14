@@ -168,7 +168,10 @@ def main():
                     3,
                 )
             # cv2.imshow(video_name, frame)
-            #multi_template(rec_free, cropped_image, 0.8)
+
+            # MOT template
+            multi_template(rec_free, cropped_image)
+
             if args.save:
                 if SAVE_FORMAT != "gif":
                     cv2.imwrite("demo/demo_images/{}.jpg".format(i), frame)
